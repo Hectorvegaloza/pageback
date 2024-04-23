@@ -20,7 +20,7 @@
                     </li>
                  
                     <li class="nav-item">
-                        <a class="nav-link" href="./ingresa.html">Ingresa</a>
+                      <a class="nav-link" href="./ingresa.html">Ingresa</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./signup.html">Registrate</a>
@@ -29,22 +29,22 @@
     </header>
     
     <main>
-      <section >
-        <h2 style="text-align: center;">¿Quieres comprar?</h2>
-        <div >
-            <div >
-                <h2 style="text-align: center;">Tienes que registrarte</h2>
-                <p >
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, voluptatum natus labore nesciunt consequatur iste exercitationem corporis placeat nisi est quam hic perspiciatis voluptatem unde et molestias veniam accusantium? Reiciendis!
-                    <br>
-                    <br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dignissimos, rem sapiente laudantium illo maxime voluptate praesentium nemo fugiat provident molestiae quae impedit necessitatibus ipsam hic rerum suscipit ex doloremque.
-                    <br>
-                    <br>
-                </p>
-            </div>
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
-    </section>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </main>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
