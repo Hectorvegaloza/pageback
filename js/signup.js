@@ -71,6 +71,7 @@ function checkInput(inputName) {
       $nameWarning.textContent = '';
       credentials.nameValid = true;
     }
+
   }
   if (inputName === 'email') {
     const regExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -118,6 +119,8 @@ function checkInput(inputName) {
       credentials.passwordConfirmValid = true;
     }
   }
+
+
   setAllowSubmit();
 }
 
