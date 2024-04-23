@@ -1,0 +1,44 @@
+
+*, *::before,*::after{
+    padding: 0;
+    margin: 0;
+    text-decoration: 0;
+    list-style: none;
+    box-sizing: border-box;
+  }
+
+
+/* general */
+.container {
+    padding: 1rem;
+  }
+  .d-none {
+    display: none;
+  }
+  .fs-1rem {
+    font-size: 1rem;
+  }
+  .fs-1em {
+    font-size: 1em;
+  }
+  .warning {
+    color: orangered;
+  }
+
+  .signup {
+    /* border: 1px solid blue; */
+    margin: 50px;
+  }
+  
+/* seccion del formulario */
+
+  .signup fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .signup button {
+    width: 100%;
+    margin: 2rem 0;
+  }
+  

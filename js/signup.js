@@ -54,6 +54,10 @@ function eventListeners() {
   });
 
   $signUp.addEventListener('submit', handleSubmit);
+
+  $signUp.inputState.addEventListener('input', () => {
+    checkInput('inputState');
+  });
 }
 
 function checkInput(inputName) {
@@ -141,7 +145,7 @@ function handleSubmit(event) {
     console.log('send data to backend for processing');
     $signUp.reset();
     window.location.href =
-      'http://127.0.0.1:5500/docs/ejemplos/vanilla/private.html';
+      'http://127.0.0.1:5500/docs/ejemplos/vanilla/privado.html';
     /* window.location.replace(
       'http://127.0.0.1:5500/docs/ejemplos/vanilla/private.html'
     ); */
