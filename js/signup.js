@@ -14,6 +14,9 @@ const credentials = {
   passwordValid: null,
   passwordConfirm: null,
   passwordConfirmValid: null,
+  inputState: null,
+  inputStateWarning: null,
+  inputConfirmValid: null,
 };
 
 let allowSubmit = false;
@@ -57,6 +60,7 @@ function eventListeners() {
 
   $signUp.inputState.addEventListener('input', () => {
     checkInput('inputState');
+
   });
 }
 
@@ -120,6 +124,18 @@ function checkInput(inputName) {
     }
   }
 
+  if (inputName === 'inputState') {
+    const $inputStateWarning = d.getElementById('inputState');
+    credentials.inputState = $signUp.inputState.value.trim();
+    credentials.inputConfirmValid = false;
+    if (credentials.inputState == 'Cambiar...') {
+      $inputStateWarning.textContent = 'Please, enter your name';
+    } else {
+      $inputStateWarning.textContent = '';
+      credentials.inputConfirmValid = true;
+    }
+
+  }
 
   setAllowSubmit();
 }
