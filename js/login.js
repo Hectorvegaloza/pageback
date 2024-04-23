@@ -31,6 +31,9 @@ d.addEventListener('DOMContentLoaded', () => {
 });
 
 /* FUNCTIONS */
+
+
+/* Escucha los eventos  y selecciona el elemento NAME */
 function eventListeners() {
   $signUp.name.addEventListener('input', () => {
     checkInput('name');
@@ -53,12 +56,7 @@ function eventListeners() {
     checkInput('password');
   });
 
-  $signUp.passwordConfirm.addEventListener('input', () => {
-    checkInput('passwordConfirm');
-  });
-  $signUp.passwordConfirm.addEventListener('blur', () => {
-    checkInput('passwordConfirm');
-  });
+
 
   $signUp.addEventListener('submit', handleSubmit);
 
@@ -76,7 +74,11 @@ function checkInput(inputName) {
       $nameWarning.textContent = 'Please, enter your name';
     } else {
       $nameWarning.textContent = '';
-      credentials.nameValid = true;
+      if(credentials.name === 'pepita'){
+        credentials.nameValid = true;
+      }else{
+        $nameWarning.textContent = 'nombre incorrecto';
+      }
     }
 
   }
@@ -86,12 +88,17 @@ function checkInput(inputName) {
     credentials.email = $signUp.email.value.trim();
     credentials.emailValid = false;
     if (credentials.email == '') {
-      $emailWarning.textContent = 'Please, enter your email address';
+      $emailWarning.textContent = 'ingrese un correo valido';
     } else if (!regExp.test(credentials.email)) {
-      $emailWarning.textContent = 'Please, enter a valid email address';
+      $emailWarning.textContent = 'ingrese un correo valido';
     } else {
       $emailWarning.textContent = '';
-      credentials.emailValid = true;
+      if(credentials.email === 'pepita@bit.institute'){
+        credentials.emailValid = true;
+      }else{
+        $emailWarning.textContent = 'correo incorrecto';
+      }
+  
     }
   }
   if (inputName === 'password') {
@@ -99,31 +106,15 @@ function checkInput(inputName) {
     credentials.password = $signUp.password.value.trim();
     credentials.passwordValid = false;
     if (credentials.password == '') {
-      $passwordWarning.textContent = 'Please, enter your password';
-    } else if (
-      credentials.passwordConfirm &&
-      credentials.password != credentials.passwordConfirm
-    ) {
-      $passwordWarning.textContent = "Your password doesn't match";
+      $passwordWarning.textContent = 'Ingrese su contraseña por favor';
     } else {
       $passwordWarning.textContent = '';
-      credentials.passwordValid = true;
-    }
-  }
-  if (inputName === 'passwordConfirm') {
-    const $passwordConfirmWarning = d.getElementById('passwordConfirmWarning');
-    credentials.passwordConfirm = $signUp.passwordConfirm.value.trim();
-    credentials.passwordConfirmValid = false;
-    if (credentials.passwordConfirm == '') {
-      $passwordConfirmWarning.textContent = 'Please, confirm your password';
-    } else if (
-      credentials.password &&
-      credentials.passwordConfirm != credentials.password
-    ) {
-      $passwordConfirmWarning.textContent = "Your password doesn't match";
-    } else {
-      $passwordConfirmWarning.textContent = '';
-      credentials.passwordConfirmValid = true;
+      if(credentials.password === 'pepa123'){
+        credentials.passwordValid = true;
+      }else{
+        $passwordWarning.textContent = 'contraseña incorrecta';
+      }
+      
     }
   }
 
@@ -135,8 +126,7 @@ function setAllowSubmit() {
   allowSubmit =
     credentials.nameValid &&
     credentials.emailValid &&
-    credentials.passwordValid &&
-    credentials.passwordConfirmValid;
+    credentials.passwordValid 
   if (allowSubmit) {
     $signUp.submitButton.removeAttribute('disabled');
   } else {

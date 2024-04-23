@@ -31,7 +31,7 @@
     <main>
       <form class="signup" id="signUp" autocomplete="off">
         <fieldset>
-          <legend style="text-align: center;">Registrate</legend>
+          <legend style="text-align: center;">Inicio de Sesión</legend>
 
           <label for="name" class="form-label" >Ingrese su nombre</label>
           <input type="text" id="name" name="name" class="form-control" required />
@@ -43,7 +43,9 @@
 
           <div id="labelWarning" class="warning"></div>
 
-
+          <label for="email" class="form-label">Ingrese su correo</label>
+          <input type="email" id="email" name="email" class="form-control" required />
+          <div id="emailWarning" class="warning"></div>
 
         </fieldset>
         <button type="submit" name="submitButton" class="btn btn-primary" disabled>ingresar
